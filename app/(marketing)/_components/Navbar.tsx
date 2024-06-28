@@ -1,3 +1,23 @@
+"use client";
+
+import { cn } from "@/lib/utils";
+import { Logo } from "./logo";
+import { useScrollTop } from "@/hooks/use-scroll-top";
+
 export const Navbar = () => {
-  return <div></div>;
+  const scrolled = useScrollTop();
+
+  return (
+    <div
+      className={cn(
+        "z-50 bg-background fixed top-0 flex items-center w-full p-6",
+        scrolled && "border-b shadow-sm"
+      )}
+    >
+      <Logo />
+      <div className="md:ml-auto md:justify-end jjustify-between w-full flex items-center gap-x-2">
+        Login
+      </div>
+    </div>
+  );
 };
